@@ -1,0 +1,15 @@
+<ul class="content">
+
+  <% @films.each do |film| %>
+  <li>
+    <span>
+      <h1><%= link_to film.title, film %></h1>
+      <h2><%= film.date %></h2>
+    </span>
+  </li>
+<% end %>
+</ul>
+
+<br />
+
+<%= link_to 'New Film', new_film_path %>

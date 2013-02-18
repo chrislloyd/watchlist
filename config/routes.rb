@@ -1,4 +1,13 @@
 Zeitgeist::Application.routes.draw do
+  get "home/index"
+
+  resources :places, :restaurants, :films
+
+  match '/home', :to =>'home#index'
+
+  root :to => "films#index"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
