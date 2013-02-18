@@ -3,7 +3,7 @@
   <% @films.each do |film| %>
   <li>
     <span>
-      <h1><%= link_to film.title, film %></h1>
+      <h1><%= link_to truncate(film.title, :length => 32), film %></h1>
       <h2><%= film.date %></h2>
     </span>
   </li>

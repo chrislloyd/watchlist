@@ -1,8 +1,10 @@
 class FilmsController < ApplicationController
+  include ActionView::Helpers::TextHelper
+
   # GET /films
   # GET /films.json
   def index
-    @films = Film.all
+    @films = Film.find(:all, :order => 'date DESC')
 
     respond_to do |format|
       format.html # index.html.erb
