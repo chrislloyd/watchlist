@@ -1,0 +1,6 @@
+<li id="films_<%= film.id %>" class="film">
+    <span>
+      <h1><%= link_to truncate(film.title, :length => 32), film, :class => "text" %></h1>
+      <h2><%= film.date %></h2>
+    </span>
+</li>

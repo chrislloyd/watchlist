@@ -4,7 +4,7 @@ class FilmsController < ApplicationController
   # GET /films
   # GET /films.json
   def index
-    @films = Film.find(:all, :order => 'date DESC')
+    @films = Film.find(:all, :order => 'id ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,6 +20,22 @@ class FilmsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @film }
+    end
+  end
+
+  def sort
+    new_order = params[:films]
+    films = Film.find(:all)
+    update_order(new_order, films)
+    render :text => nil
+  end
+
+  def update_order(new_order, films_to_update)
+    if films_to_update !=nil && new_order !=nil && films_to_update.count == new_order.count
+      films_to_update.each do |film|
+        film.position = new_order.index(film.id.to_s) + 1
+        film.save
+      end
     end
   end
 
@@ -48,9 +64,11 @@ class FilmsController < ApplicationController
       if @film.save
         format.html { redirect_to @film, notice: 'Film was successfully created.' }
         format.json { render json: @film, status: :created, location: @film }
+        format.js
       else
         format.html { render action: "new" }
         format.json { render json: @film.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

@@ -1,15 +1,8 @@
 <ul class="content">
-
-  <% @films.each do |film| %>
-  <li>
-    <span>
-      <h1><%= link_to truncate(film.title, :length => 32), film %></h1>
-      <h2><%= film.date %></h2>
-    </span>
-  </li>
-<% end %>
+	<%= render :partial => "film", :collection => @films %>
 </ul>
 
-<br />
-
-<%= link_to 'New Film', new_film_path %>
+<%= form_for :film, :url => { :action => "create" }, :remote => true do |f| %>
+	<%= f.text_field :title %>
+	<%= f.submit %>
+<% end %>

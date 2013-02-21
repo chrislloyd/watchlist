@@ -1,0 +1,8 @@
+$(function(){
+
+	$('ul.content').append('<%= escape_javascript(render :partial => "film", :locals => { :film => @film }) %>');
+	var textarea = $('input#film_title');
+	textarea.val('');
+
+});
+
