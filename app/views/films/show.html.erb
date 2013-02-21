@@ -1,24 +1,22 @@
-<p id="notice"><%= notice %></p>
+<%= form_for(@film) do |f| %>
+  <% if @film.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@film.errors.count, "error") %> prohibited this film from being saved:</h2>
 
-<p>
-  <b>Title:</b>
-  <%= @film.title %>
-</p>
+      <ul>
+      <% @film.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<p>
-  <b>Date:</b>
-  <%= @film.date %>
-</p>
+  <%= f.text_field :title, :placeholder => "Title" %>
 
-<p>
-  <b>Status:</b>
-  <%= @film.status %>
-</p>
+  <%= f.datetime_select :date %>
 
-<p>
-  <b>Position:</b>
-  <%= @film.position %>
-</p>
+  <%= f.number_field :status %>
 
-<%= link_to 'Edit', edit_film_path(@film) %> |
-<%= link_to 'Back', films_path %>
+  <%= f.submit %>
+
+<% end %>

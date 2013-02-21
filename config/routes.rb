@@ -9,7 +9,6 @@ Zeitgeist::Application.routes.draw do
 
   match "films/sort" => "films#sort", :as => "films_sort", :via => :post
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
