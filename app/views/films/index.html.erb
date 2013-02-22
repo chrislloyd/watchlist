@@ -1,8 +1,13 @@
+<div class="overlay"></div>
+<div class="newform">
+  <%= form_for :film, :url => { :action => "create" }, :remote => true do |f| %>
+	<%= f.text_field :title, :autofocus => true %>
+	<%= f.submit :class => "submit" %>
+  <% end %>
+</div>
+
 <ul class="content">
 	<%= render :partial => "film", :collection => @films %>
 </ul>
 
-<%= form_for :film, :url => { :action => "create" }, :remote => true do |f| %>
-	<%= f.text_field :title %>
-	<%= f.submit %>
-<% end %>
+<%= link_to "+", "", :class => "new", :remote => true %>

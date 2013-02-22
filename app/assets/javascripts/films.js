@@ -1,5 +1,17 @@
 $(function(){
 
+	$('a.new').click(function(){
+    
+    	$('body').addClass('modal');
+    
+    });
+
+    $('div.overlay').click(function(){
+    
+    	$('body').removeClass('modal');
+    
+    });
+
 	$('div.status').click(function(){
     
     	$(this).toggleClass('watched');
