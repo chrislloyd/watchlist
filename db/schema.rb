@@ -11,15 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222075342) do
+ActiveRecord::Schema.define(:version => 20130222080734) do
 
   create_table "films", :force => true do |t|
     t.string   "title"
     t.datetime "date"
-    t.boolean  "status",     :default => false
     t.integer  "position",   :default => 50000
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.boolean  "status",     :default => false
   end
 
   create_table "places", :force => true do |t|
