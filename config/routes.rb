@@ -3,6 +3,8 @@ Zeitgeist::Application.routes.draw do
 
   resources :places, :restaurants, :films
 
+  match 'films/:id/watch_toggle' => 'films#watch_toggle', :as => 'watch_toggle_film'
+
   match '/home', :to =>'home#index'
 
   root :to => "films#index"

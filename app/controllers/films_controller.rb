@@ -80,12 +80,23 @@ class FilmsController < ApplicationController
 
     respond_to do |format|
       if @film.update_attributes(params[:film])
-        format.html { redirect_to @film, notice: 'Film was successfully updated.' }
+        format.html { redirect_to films_url, notice: 'Film was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @film.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+
+  def watch_toggle
+    @status = Film.find(params[:id])
+    @status.toggle!(:status)
+
+    respond_to do |format|
+      flash[:success] = "Yeah"
+      format.html { redirect_to root_path }
     end
   end
 

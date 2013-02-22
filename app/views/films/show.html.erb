@@ -11,12 +11,21 @@
     </div>
   <% end %>
 
+<% if @film.status == true %>
+  <div class="status watched">
+<% else %>  
+  <div class="status">
+<% end %>
+    <%= link_to("", { :action => "watch_toggle", :method => :put}, :remote=> true , :class => "text" )  %>
+  </div>
+
   <%= f.text_field :title, :placeholder => "Title" %>
+  
+  <div class="dateselect">
+    <%= f.date_select :date, :prompt => {:month => 'Month', :day => '#', :year => 'Year'}, :order => [:day, :month, :year] %>
+  </div>
+  
+  <%= f.submit :value => "Save", :class => "submit" %>
 
-  <%= f.datetime_select :date %>
-
-  <%= f.number_field :status %>
-
-  <%= f.submit %>
 
 <% end %>

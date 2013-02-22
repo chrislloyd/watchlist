@@ -1,5 +1,11 @@
 $(function(){
 
+	$('div.status').click(function(){
+    
+    	$(this).toggleClass('watched');
+    
+    });
+
     $('ul.content').sortable({
 	    items:'.film', 
 	    handle:'.text', 

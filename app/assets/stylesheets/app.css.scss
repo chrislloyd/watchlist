@@ -135,8 +135,11 @@ ul.content {
 			right: 6%;
 		}
 
+	}
 
-
+	li.film.inactive h1 a {
+		background: #f6f6f6;
+		color: #bbb;
 	}
 
 	@media all and (max-width: 1300px) and (min-width: 1000px) {
@@ -168,10 +171,87 @@ ul.content {
 
 }
 
+form.edit_film {
+	background: #fff;
+	width: 500px;
+	margin: 0 auto;
+	padding: 38px 40px 40px 40px;
+	border-radius: 2px;
+	box-shadow: 0px 2px rgba(100,100,100,0.1);
+}
 
+div.status {
+	width: 120px;
+	height: 120px;
+	background: #ffaaaa;
+	border-radius: 60px;
+	margin: 6px auto 20px auto;
+}
 
+div.status a {
+	display: block;
+	width: 120px;
+	height: 120px;
+}
 
+div.status.watched {
+	background: #aaffaa;
+}
 
+input#film_title {
+	width: 100%;
+	font-family: 'Open Sans';
+	border: 0;
+	border-bottom: 1px solid #f4f4f4;
+	line-height: 58px;
+	font-size: 24px;
+	padding: 1px 0px 0 0px;
+	margin-bottom: 16px;
+	color: #333;
+	text-align: center;
+}
 
+input.submit {
+	font-family: 'Open Sans';
+	font-size: 16px;
+	color: #bbb;
+	font-weight: 600;
+	padding: 18px 22px;
+	background: #f6f6f6;
+	border: 0;
+	border-radius: 2px;
+	border-bottom: 1px solid #f2f2f2;
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
 
+input.submit:hover {
+	background: #f2f2f2;
+	color: #999;
+}
 
+input.submit:active {
+	background: #e2e2e2;
+	color: #666;
+	padding: 19px 22px 17px 22px;
+}
+
+div.dateselect {
+	display: block;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+select {
+	background: #fff;
+	border-radius: 0;
+	margin: 0 12px 0 0;
+	font-family: 'Open Sans';
+	font-size: 18px;
+	color: #aaa;
+	border: 0;
+	padding: 0;
+	-webkit-appearance: none;
+	text-align: -webkit-center;
+}
