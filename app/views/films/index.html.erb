@@ -1,7 +1,7 @@
 <div class="overlay"></div>
 <div class="newform">
   <%= form_for :film, :url => { :action => "create" }, :remote => true do |f| %>
-	<%= f.text_field :title, :autofocus => true %>
+	<%= f.text_field :title, :autofocus => true, :autocomplete => :off %>
 	<%= f.submit :class => "submit" %>
   <% end %>
 </div>

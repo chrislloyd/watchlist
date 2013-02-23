@@ -5,11 +5,13 @@ Zeitgeist::Application.routes.draw do
 
   match 'films/:id/watch_toggle' => 'films#watch_toggle', :as => 'watch_toggle_film'
 
-  match '/home', :to =>'home#index'
+  match '/all', :to =>'films#index'
 
   root :to => "films#index"
 
   match "films/sort" => "films#sort", :as => "films_sort", :via => :post
+  match "/watched" => "films#watched", :as => "films_watched", :via => :get
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

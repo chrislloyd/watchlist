@@ -19,13 +19,16 @@
     <%= link_to("", { :action => "watch_toggle", :method => :put}, :remote=> true , :class => "text" )  %>
   </div>
 
-  <%= f.text_field :title, :placeholder => "Title" %>
+  <%= f.text_field :title, :placeholder => "Title", :autocomplete => :off %>
   
   <div class="dateselect">
-    <%= f.date_select :date, :prompt => {:month => 'Month', :day => '#', :year => 'Year'}, :order => [:day, :month, :year] %>
+    <%= f.date_select :date, :prompt => {:month => 'Mon', :day => 'D', :year => 'Year'}, :order => [:day, :month, :year], :use_short_month => true %>
   </div>
   
   <%= f.submit :value => "Save", :class => "submit" %>
-
+  
+  <div class="alert">Saving a date requires all fields</div>
 
 <% end %>
+
+

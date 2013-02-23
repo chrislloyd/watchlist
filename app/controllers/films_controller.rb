@@ -12,6 +12,15 @@ class FilmsController < ApplicationController
     end
   end
 
+  def watched
+    @films = Film.where(:status => [true]).find(:all, :order => "id ASC")
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @films }
+    end
+  end
+
   # GET /films/1
   # GET /films/1.json
   def show
