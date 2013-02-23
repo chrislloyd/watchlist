@@ -183,7 +183,7 @@ ul.content {
   		li {
 			display: inline-block;
 			width: 100%;
-			margin: 0 0 2px 0;
+			margin: 0 0 1px 0;
 			float: left;
   		}
 	}
@@ -238,11 +238,11 @@ input#film_title {
 
 input.submit {
 	font-family: 'Open Sans';
-	opacity: 0.5;
+	opacity: 0.4;
 	font-size: 16px;
 	font-weight: 600;
 	padding: 18px 22px;
-	background: #F9F7F4;
+	background: #F4F2E9;
 	border: 0;
 	border-radius: 2px;
 	display: block;
@@ -258,7 +258,7 @@ input.submit.save {
 }
 
 input.submit:hover {
-	opacity: 0.7;
+	opacity: 0.6;
 }
 
 input.submit:active {
@@ -385,19 +385,17 @@ button:focus {
 
 a.new {
 	position: fixed;
-	opacity: 0.6;
+	opacity: 0.7;
 	top: 13px;
 	right: 10px;
 	z-index: 2;
 	font-weight: 600;
 	font-size: 24px;
 	padding: 0px 10px 1px 10px;
-	background: rgba(255,255,255,0.8);
-	border-radius: 2px;
 }
 
 a.new:hover {
-	opacity: 0.7;
+	opacity: 0.8;
 }
 
 div.alert {
@@ -405,7 +403,7 @@ div.alert {
 	margin: 10px 0 -27px 0;
 	padding: 10px 10px;
 	border-radius: 2px;
-	color: #ddbbbb;
+	color: #ddaaaa;
 	text-align: center;
 	-webkit-animation: fadeIn .2s ease;
 }
