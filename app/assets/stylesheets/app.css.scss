@@ -507,6 +507,7 @@ and (max-device-width : 480px) {
 	}
 
 	#container {
+		padding: 0;
 	}
 
 	ul.content li {
@@ -530,7 +531,7 @@ and (max-device-width : 480px) {
 
 	div.newform {
 		width: -webkit-calc(100% - 20px);
-		margin: 0 0 0 -100px;
+		margin: 0 0 0 -webkit-calc(50% - 10px);
 		z-index: 4;
 		top: 15%;
 
