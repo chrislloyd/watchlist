@@ -519,10 +519,12 @@ and (max-device-width : 480px) {
 
 	span {
 		width: -webkit-calc(100% - 10px);
+		background: #fff;
+		display: block;
 	}
 
 	form.edit_film {
-		width: -webkit-calc(100% - 20px);
+		width: -webkit-calc(100% - 100px);
 	}
 
 	header.condensed ul {
@@ -530,13 +532,13 @@ and (max-device-width : 480px) {
 	}
 
 	div.newform {
-		width: -webkit-calc(100% - 20px);
-		margin: 0 0 0 -webkit-calc(50% - 10px);
+		width: -webkit-calc(100% - 60px);
+		margin: 0 0 0 -webkit-calc(50% - 30px);
 		z-index: 4;
 		top: 15%;
 
 		input#film_title {
-			width: -webkit-calc(100% - 20px);
+			width: 100%;
 		}
 	}
 }
