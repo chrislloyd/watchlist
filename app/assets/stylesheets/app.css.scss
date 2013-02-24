@@ -502,22 +502,16 @@ div.alert.show {
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
 
-	* {
-		width: 200px;
-	}
-
 	header {
-		width: 200px;
 		position: relative;
 	}
 
 	#container {
-		width: 200px;
 	}
 
 	ul.content li {
 		display: inline-block;
-		width: 200px;
+		width: 100%;
 		margin: 0 0 1px 0;
 		float: left;
 	}
@@ -537,7 +531,7 @@ and (max-device-width : 480px) {
 		top: 15%;
 
 		input#film_title {
-			width: 200px;
+			width: -webkit-calc(100% - 20px);
 		}
 	}
 }
