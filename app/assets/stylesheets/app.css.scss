@@ -134,7 +134,7 @@ header.condensed {
 	ul {
 		margin: 0 auto;
 		height: 67px;
-		width: 500px;
+		width: 480px;
 		text-align: left;
 	}
 
@@ -153,6 +153,7 @@ header.condensed {
 
 	li.deletebtn {
 		float: right;
+		margin-right: 10px;
 
 		a.delete {
 			background: url('delete.svg') no-repeat;
@@ -162,7 +163,7 @@ header.condensed {
 		}
 
 		ul.confirm {
-			width: 175px;
+			width: 167px;
 			position: absolute;
 			top: 14px;
 			right: 0;
@@ -236,6 +237,7 @@ ul.content {
 			float: left;
 		  	width: 100%;
 		  	display: block;
+		  	font-size: 14px;
 		}
 
 		h1 a {
@@ -425,7 +427,7 @@ select:hover {
         }
         100% {
             opacity: 1;
-            width: 175px;
+            width: 167px;
         }
 }
 
@@ -511,7 +513,7 @@ body.registrations, body.sessions {
 		background: #fff;
 		width: 400px;
 		margin: 0 auto;
-		padding: 12px 40px 40px 40px;
+		padding: 18px 40px 40px 40px;
 		border-radius: 2px;
 		box-shadow: 0px 2px rgba(100,100,100,0.1);
 		-webkit-transition:height .8s ease;
@@ -546,7 +548,7 @@ body.registrations, body.sessions {
 		line-height: 18px;
 		font-size: 18px;
 		padding: 14px 0px 14px 0px;
-		margin: 20px 0 0 0;
+		margin: 10px 0 0 0;
 		color: #635A53;
 		opacity: 0.9;
 	}
@@ -648,7 +650,7 @@ and (max-device-width : 480px) {
 		float: left;
 		padding: 0 0 15px 0;
 		width: 96%;
-		margin: 0 2%;
+		margin: 0 4%;
 	}
 
 	ul.content {
@@ -661,10 +663,21 @@ and (max-device-width : 480px) {
 		float: left;
 		
 		div {
-			width: 100%;
 			background: #fff;
 			display: block;
 			margin: 0 0%;
+			width: 86%;
+			padding: 0px 5% 0px 5%;
+
+			h1 a { 
+				width: 100%;
+				padding: 14px 0 13px 0;
+				margin: 0;
+			}
+		}
+
+		div:hover {
+			display: none;
 		}
 
 	}
@@ -672,7 +685,7 @@ and (max-device-width : 480px) {
 	form.edit_film {
 		width: 76%;
 		padding: 10px 10%;
-		margin: 0 2%;
+		margin: 0 0;
 
 		div.status {
 			margin: 30px auto 10px auto;
