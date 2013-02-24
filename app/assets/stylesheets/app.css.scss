@@ -498,7 +498,9 @@ div.alert.show {
 }
 
 
-@media screen and (max-device-width: 480px) {
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
 	ul.content li {
 		display: inline-block;
 		width: 100%;
@@ -507,7 +509,7 @@ div.alert.show {
 	}
 
 	form.edit_film {
-		width: 290px;
+		width: 190px;
 	}
 
 	header.condensed ul {
@@ -515,13 +517,13 @@ div.alert.show {
 	}
 
 	div.newform {
-		width: 380px;
+		width: 100%;
 		margin: 0 0 0 -190px;
 		z-index: 4;
 		top: 15%;
 
 		input#film_title {
-			width: 352px;
+			width: -webkit-calc(100% - 20px);
 		}
 	}
 }
