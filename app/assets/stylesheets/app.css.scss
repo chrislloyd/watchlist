@@ -516,6 +516,10 @@ and (max-device-width : 480px) {
 		float: left;
 	}
 
+	span {
+		width: -webkit-calc(100% - 10px);
+	}
+
 	form.edit_film {
 		width: 190px;
 	}
