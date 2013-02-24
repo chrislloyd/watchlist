@@ -90,6 +90,18 @@ $(function(){
 	
 	});
 
+    $('a.logout').click(function(){
+    
+        $('ul.confirm').addClass('show');
+        $('a.logout').hide();
+
+        $('a.no').click(function(){
+            $('ul.confirm').removeClass('show');
+            $('a.logout').show();
+        });
+    
+    });
+
 	$('a.delete').click(function(){
     
     	$('ul.confirm').addClass('show');

@@ -2,6 +2,12 @@
 		<ul>
 			<li class="films"><a href="/all" class="home"></a></li>
 			<li class="newbtn"><%= link_to "", "", :class => "new", :remote => true %></a>
-			<li class="logout"><%= link_to "", destroy_user_session_path, :class => "logout", :method => :delete %></li>
+			<li class="logout"><%= link_to "", "", :remote => true, :class => "logout" %>
+				<ul class="confirm">
+        			<li>Logout?</li>
+        			<li><%= link_to "Yes", destroy_user_session_path, :method => :delete, :class => "yes" %></li>
+        			<li><%= link_to "No", @film, :remote => true, :class => "no" %></li>
+      			</ul>
+      		</li>
 		</ul>
 </header>

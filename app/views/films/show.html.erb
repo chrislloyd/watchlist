@@ -11,6 +11,8 @@
   </ul>
 </header>
 
+<div id="container" class="relative">
+
 <%= form_for(@film) do |f| %>
   <% if @film.errors.any? %>
     <div id="error_explanation">
@@ -45,3 +47,5 @@
   
 
 <% end %>
+
+</div>

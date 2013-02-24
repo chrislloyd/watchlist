@@ -1,12 +1,12 @@
 <li id="films_<%= film.id %>" class="film">
 <% if film.status == true %>
-	<span class="">
+	<div class="">
 <% else %>  
-  	<span class="inactive">
+  	<div class="inactive">
 <% end %>
 
     
       <h1><%= link_to film.title, film, :class => "truncate text" %></h1>
       <h2><%= film.date %></h2>
-    </span>
+    </div>
 </li>
