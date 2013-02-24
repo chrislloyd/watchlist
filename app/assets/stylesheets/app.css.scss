@@ -507,7 +507,7 @@ and (max-device-width : 480px) {
 
 	ul.content li {
 		display: inline-block;
-		width: 100%;
+		width: 200px;
 		margin: 0 0 1px 0;
 		float: left;
 	}
@@ -521,13 +521,13 @@ and (max-device-width : 480px) {
 	}
 
 	div.newform {
-		width: 100%;
-		margin: 0 0 0 -190px;
+		width: 200px;
+		margin: 0 0 0 -100px;
 		z-index: 4;
 		top: 15%;
 
 		input#film_title {
-			width: -webkit-calc(100% - 20px);
+			width: 200px;
 		}
 	}
 }
