@@ -515,7 +515,6 @@ and (max-device-width : 480px) {
 		width: 100%;
 		margin: 0 0 1px 0;
 		float: left;
-		background: #fff;
 	}
 
 	span {
@@ -525,7 +524,8 @@ and (max-device-width : 480px) {
 	}
 
 	form.edit_film {
-		width: -webkit-calc(100% - 100px);
+		width: -webkit-calc(100% - 20px);
+		padding: 0;
 	}
 
 	header.condensed ul {
