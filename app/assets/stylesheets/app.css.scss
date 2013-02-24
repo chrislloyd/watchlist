@@ -510,6 +510,10 @@ and (max-device-width : 480px) {
 		padding: 0;
 	}
 
+	ul.content {
+		padding-bottom: 15px;
+	}
+
 	ul.content li {
 		display: block;
 		width: 100%;
@@ -524,8 +528,17 @@ and (max-device-width : 480px) {
 	}
 
 	form.edit_film {
-		width: -webkit-calc(100% - 20px);
-		padding: 0;
+		width: -webkit-calc(100% - 60px);
+		padding: 10px 20px;
+
+		div.status {
+			margin: 30px auto 0 auto;
+		}
+	}
+
+	div.alert {
+		margin: 0px;
+		padding: 5px;
 	}
 
 	header.condensed ul {
@@ -533,10 +546,10 @@ and (max-device-width : 480px) {
 	}
 
 	div.newform {
-		width: -webkit-calc(100% - 60px);
-		margin: 0 0 0 -webkit-calc(50% - 30px);
+		width: 230px;
+		margin: 0 0 0 -130px;
 		z-index: 4;
-		top: 15%;
+		top: 15px;
 
 		input#film_title {
 			width: 100%;
