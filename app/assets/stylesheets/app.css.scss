@@ -85,9 +85,9 @@ header {
 			}
 
 			ul.confirm {
-				width: 175px;
+				width: 176px;
 				position: absolute;
-				top: 14px;
+				top: 15px;
 				right: 0;
 				overflow: hidden;
 				display: none;
@@ -97,7 +97,7 @@ header {
 
 			ul.confirm.show {
 				display: block;
-				-webkit-animation: slideIn .2s ease;
+				-webkit-animation: slideInLogout .2s ease;
 
 				li {
 					margin: 0;
@@ -426,6 +426,17 @@ select:hover {
         100% {
             opacity: 1;
             width: 175px;
+        }
+}
+
+@-webkit-keyframes slideInLogout {
+        0% {
+            opacity: 0;
+            width: 165px;
+        }
+        100% {
+            opacity: 1;
+            width: 176px;
         }
 }
 
