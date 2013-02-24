@@ -501,6 +501,10 @@ div.alert.show {
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
+	header {
+		width: 200px;
+	}
+	
 	ul.content li {
 		display: inline-block;
 		width: 100%;
