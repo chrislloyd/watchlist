@@ -47,48 +47,117 @@ header {
 		margin: 0;
 		text-align: left;
 		width: 100%;
-		text-align: center;
 	
 		li {
 			display: inline-block;
 			position: relative;
 			margin: 0;
+
+			a.home {
+				background: url('home.svg') no-repeat;
+				background-position: center center;
+				width: 24px;
+				height: 20px;
+			}
 		}
 
-		li.films {
-			// background: #B08BD1;
-		}
+		li.newbtn {
+			float: right;
 
-		li.restaurants {
-			// background: #F46969;
-		}
-
-		li.places {
-			// background: #83D2E5;
+			a.new {
+				background: url('add.svg') no-repeat;
+				background-position: center center;
+				width: 21px;
+				height: 21px;
+			}
 		}
 
 			a {
 				display: block;
-				padding: 20px 24px;
+				margin: 14px 16px 10px 16px;
+				padding: 10px 10px;
 				font-weight: 600;
 				text-decoration: none;
 				text-align: left;
-				opacity: 0.2;
+				opacity: 0.4;
 			}
 
 			a:hover {
-				opacity: 0.5;
+				opacity: 0.6;
 			}
 
 	}
 }
 
+header.condensed {
+	position: relative;
+	ul {
+		margin: 0 auto;
+		height: 67px;
+		width: 500px;
+		text-align: left;
+	}
+
+	a { font-weight: 400; }
+
+	li.backbtn {
+		float: left;
+
+		a.back {
+			background: url('back.svg') no-repeat;
+			background-position: center center;
+			width: 22px;
+			height: 19px;
+		}
+	}
+
+	li.deletebtn {
+		float: right;
+
+		a.delete {
+			background: url('delete.svg') no-repeat;
+			background-position: center center;
+			width: 19px;
+			height: 19px;
+		}
+
+		ul.confirm {
+			width: 175px;
+			position: absolute;
+			top: 14px;
+			right: 0;
+			overflow: hidden;
+			display: none;
+			color: #837A73;
+			font-weight: 600;
+		}
+
+		ul.confirm.show {
+			display: block;
+			-webkit-animation: slideIn .2s ease;
+
+			li {
+				margin: 0;
+				
+				padding: 10px;
+				display: inline-block;
+
+				a {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+
+}
+
 body.home header ul li.logo a, body.films header ul li.films a, body.restaurants header ul li.restaurants a, body.places header ul li.places a {
-	opacity: 0.8;
+	opacity: 0.7;
 }
 
 div#container {
-	padding-top: 60px;
+	padding-top: 67px;
 }
 
 ul.content {
@@ -96,6 +165,7 @@ ul.content {
 	width: 100%;
 	border-radius: 3px;
 	margin: 0;
+	float: left;
 
 	li {
 		display: inline-block;
@@ -158,34 +228,7 @@ ul.content {
 	}
 
 	span.inactive {
-		opacity: 0.4;
-	}
-
-	@media all and (max-width: 1300px) and (min-width: 1000px) {
-  		li {
-			display: inline-block;
-			width: 33.33333333%;
-			margin: 0 0 18px 0;
-			float: left;
-  		}
-	}
-
-	@media all and (max-width: 1000px) and (min-width: 650px) {
-  		li {
-			display: inline-block;
-			width: 50%;
-			margin: 0 0 18px 0;
-			float: left;
-  		}
-	}
-
-	@media all and (max-width: 650px) and (min-width: 0px) {
-  		li {
-			display: inline-block;
-			width: 100%;
-			margin: 0 0 1px 0;
-			float: left;
-  		}
+		opacity: 0.5;
 	}
 
 }
@@ -231,7 +274,7 @@ input#film_title {
 	font-size: 24px;
 	padding: 14px 0px 10px 0px;
 	margin-bottom: 0px;
-	color: #443D38;
+	color: #635A53;
 	opacity: 0.9;
 	text-align: center;
 }
@@ -248,7 +291,7 @@ input.submit {
 	display: block;
 	margin: 0 auto;
 	width: 100%;
-	color: #443D38;
+	color: #635A53;
 	display: none;
 }
 
@@ -331,6 +374,17 @@ select:hover {
         }
 }
 
+@-webkit-keyframes slideIn {
+        0% {
+            opacity: 0;
+            width: 160px;
+        }
+        100% {
+            opacity: 1;
+            width: 175px;
+        }
+}
+
 .overlay {
 	width: 100%;
 	height: 100%;
@@ -346,7 +400,7 @@ div.newform {
 	margin: 0 0 0 -250px;
 	z-index: 4;
 	position: fixed;
-	top: 35%;
+	top: 15%;
 	left: 50%;
 	display: none;
 
@@ -383,25 +437,10 @@ button:focus {
     outline: none;
 }
 
-a.new {
-	position: fixed;
-	opacity: 0.7;
-	top: 13px;
-	right: 10px;
-	z-index: 2;
-	font-weight: 600;
-	font-size: 24px;
-	padding: 0px 10px 1px 10px;
-}
-
-a.new:hover {
-	opacity: 0.8;
-}
-
 div.alert {
 	display: none;
-	margin: 10px 0 -27px 0;
-	padding: 10px 10px;
+	margin: 12px 0 -25px 0;
+	padding: 15px 10px;
 	border-radius: 2px;
 	color: #ddaaaa;
 	text-align: center;
@@ -410,4 +449,79 @@ div.alert {
 
 div.alert.show {
 	display: block;
+}
+
+@media all and (max-width: 1300px) and (min-width: 1000px) {
+  	ul.content li {
+		display: inline-block;
+		width: 33.33333333%;
+		margin: 0 0 18px 0;
+		float: left;
+	}
+}
+
+@media all and (max-width: 1000px) and (min-width: 650px) {
+	ul.content li {
+		display: inline-block;
+		width: 50%;
+		margin: 0 0 18px 0;
+		float: left;
+	}
+}
+
+@media all and (max-width: 650px) and (min-width: 0px) {
+	ul.content li {
+		display: inline-block;
+		width: 100%;
+		margin: 0 0 1px 0;
+		float: left;
+	}
+
+	form.edit_film {
+		width: 290px;
+	}
+
+	header.condensed ul {
+		width: 380px;
+	}
+
+	div.newform {
+		width: 380px;
+		margin: 0 0 0 -190px;
+		z-index: 4;
+		top: 15%;
+
+		input#film_title {
+			width: 352px;
+		}
+	}
+}
+
+
+@media screen and (max-device-width: 480px) {
+	ul.content li {
+		display: inline-block;
+		width: 100%;
+		margin: 0 0 1px 0;
+		float: left;
+	}
+
+	form.edit_film {
+		width: 290px;
+	}
+
+	header.condensed ul {
+		width: 380px;
+	}
+
+	div.newform {
+		width: 380px;
+		margin: 0 0 0 -190px;
+		z-index: 4;
+		top: 15%;
+
+		input#film_title {
+			width: 352px;
+		}
+	}
 }

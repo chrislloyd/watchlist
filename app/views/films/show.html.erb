@@ -1,3 +1,16 @@
+<header class="condensed">
+  <ul>
+    <li class="backbtn"><%= link_to "", "/all", :class => "back" %></li>
+    <li class="deletebtn"><%= link_to "", @film, :remote => true, :class => "delete"  %>
+      <ul class="confirm">
+        <li>Delete?</li>
+        <li><%= link_to "Yes", @film, method: :delete, :class => "yes" %></li>
+        <li><%= link_to "No", @film, :remote => true, :class => "no" %></li>
+      </ul>
+    </li>
+  </ul>
+</header>
+
 <%= form_for(@film) do |f| %>
   <% if @film.errors.any? %>
     <div id="error_explanation">
@@ -19,16 +32,16 @@
     <%= link_to("", { :action => "watch_toggle", :method => :put}, :remote=> true , :class => "text" )  %>
   </div>
 
-  <%= f.text_field :title, :placeholder => "Title", :autocomplete => :off %>
+  <%= f.text_field :title, :placeholder => "Title", :autocomplete => :off, :maxlength => "75" %>
   
   <div class="dateselect">
     <%= f.date_select :date, :prompt => {:month => 'Mon', :day => 'D', :year => 'Year'}, :order => [:day, :month, :year], :use_short_month => true %>
   </div>
   
   <%= f.submit :value => "Save", :class => "submit" %>
+
+  <div class="alert title">A title is required</div>
+  <div class="alert date">Saving a date requires all fields</div>
   
-  <div class="alert">Saving a date requires all fields</div>
 
 <% end %>
-
-

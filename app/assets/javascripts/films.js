@@ -19,8 +19,18 @@ $(function(){
     
     });
 
+	$("input#film_title").bind("keypress", function(e) {
+        var text = $(this).val();
+		var keycode = (e.keyCode || e.which);
+	    if (keycode == 13) {
+	    	if (text.length == 0) {
+		        return false;
+	    	}
+	    }
+    });
+
  	$("form.edit_film").bind("keypress", function(e) {
-            if (e.keyCode == 13) return false;
+        if (e.keyCode == 13) return false;
     });
 
     $('input#film_title').on('keyup', function(e){
@@ -29,7 +39,9 @@ $(function(){
 
 	    if (text.length == 0) {
 	        $('input.submit').removeClass('save');
+	        $('div.alert.title').addClass('show');
 	    } else {
+	    	$('div.alert.title').removeClass('show');
 	        $('input.submit').addClass('save');
 	    }
 
@@ -37,23 +49,38 @@ $(function(){
 
 	$('select').on('change', function() {
 
-        $('input.submit').addClass('save');
+		var text = $('input#film_title').val();
 
+		if (text.length > 0) {
+        	$('input.submit').addClass('save');
 
+        	var empty = false;
+        	$('select').each(function() {
+            	if ($(this).val() == '') {
+            	    empty = true;
+            	}
+        	});
 
-        var empty = false;
-        $('select').each(function() {
-            if ($(this).val() == '') {
-                empty = true;
-            }
-        });
-
-        if (empty) {
-            $('div.alert').addClass('show');
+        	if (empty) {
+            	$('div.alert.date').addClass('show');
+        	} else {
+            	$('div.alert.date').removeClass('show');
+        	}
         } else {
-            $('div.alert').removeClass('show');
-        }
+        	var empty = false;
+        	$('select').each(function() {
+            	if ($(this).val() == '') {
+            	    empty = true;
+            	}
+        	});
 
+        	if (empty) {
+            	$('div.alert.date').addClass('show');
+        	} else {
+            	$('div.alert.date').removeClass('show');
+        	}
+
+        }
 
 	});
 
@@ -62,6 +89,18 @@ $(function(){
 	    $(this).parents('form').submit();
 	
 	});
+
+	$('a.delete').click(function(){
+    
+    	$('ul.confirm').addClass('show');
+    	$('a.delete').hide();
+
+    	$('a.no').click(function(){
+    		$('ul.confirm').removeClass('show');
+    		$('a.delete').show();
+    	});
+    
+    });
 
     $('ul.content').sortable({
 	    items:'.film', 
