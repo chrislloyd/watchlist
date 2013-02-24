@@ -36,7 +36,7 @@ class FilmsController < ApplicationController
 
   def sort
     new_order = params[:films]
-    films = Film.find(:all)
+    films = current_user.films(:all)
     update_order(new_order, films)
     render :text => nil
   end
