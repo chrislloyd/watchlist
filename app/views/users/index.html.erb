@@ -1,0 +1,28 @@
+<script type="text/javascript">
+$(function(){
+
+	var count = $('ul li').length;
+	
+	$('.count').text(count);
+
+});
+</script>
+
+<div id="container" class="relative">
+
+<ul style="list-style-type: none; padding: 0; line-height: 36px; width: 460px; background: #fff; border-radius: 4px; margin: 60px auto; padding: 40px; font-size: 14px; color: #635A53;">
+
+<div class="count" style="float: right; font-weight: 600;"></div>
+<h2 style="margin-bottom: 20px; font-weight: 600;">Users</h2>
+
+
+<% @users.each do |user| %>
+    <li>
+      <%= user.email %>
+      <span style="color: #bbb; float: right;"><%= time_ago_in_words(user.created_at) %> ago</span>
+    </li>
+<% end %>
+
+</ul>
+
+</div>

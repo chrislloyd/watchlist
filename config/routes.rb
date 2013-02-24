@@ -1,7 +1,7 @@
 Zeitgeist::Application.routes.draw do
   devise_for :users, :controllers => { :users => 'users' }, :path => '/', :path_names => { :sign_in => 'login', :sign_up => 'signup', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification' }
 
-  get "home/index"
+  get "users/index"
 
   resources :places, :restaurants, :films
 
