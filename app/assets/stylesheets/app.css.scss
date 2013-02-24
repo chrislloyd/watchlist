@@ -538,6 +538,7 @@ body.registrations, body.sessions {
 	input {
 		width: 100%;
 		border: 0;
+		-webkit-appearance: none;
 	}
 
 	input.textfield {
@@ -719,7 +720,7 @@ and (max-device-width : 480px) {
 			margin: 0 2%;
 		
 			input.textfield {
-				margin-top: 10px;
+				margin-top: 0px;
 			}
 		}
 	}
