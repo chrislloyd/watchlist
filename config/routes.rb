@@ -1,5 +1,5 @@
 Zeitgeist::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :users => 'users' }, :path => '/', :path_names => { :sign_in => 'login', :sign_up => 'signup', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification' }
 
   get "home/index"
 
@@ -12,7 +12,6 @@ Zeitgeist::Application.routes.draw do
   root :to => "films#index"
 
   match "films/sort" => "films#sort", :as => "films_sort", :via => :post
-  match "/watched" => "films#watched", :as => "films_watched", :via => :get
 
 
   # The priority is based upon order of creation:
