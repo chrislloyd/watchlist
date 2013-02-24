@@ -2,5 +2,6 @@
 		<ul>
 			<li class="films"><a href="/all" class="home"></a></li>
 			<li class="newbtn"><%= link_to "", "", :class => "new", :remote => true %></a>
+			<li class="logout"><%= link_to "", destroy_user_session_path, :class => "logout", :method => :delete %></li>
 		</ul>
 </header>

@@ -62,13 +62,25 @@ header {
 		}
 
 		li.newbtn {
-			float: right;
 
 			a.new {
 				background: url('add.svg') no-repeat;
 				background-position: center center;
 				width: 21px;
 				height: 21px;
+			}
+		}
+
+		li.logout {
+			float: right;
+			position: relative;
+			top: -1px;
+
+			a.logout {
+				background: url('logout.svg') no-repeat;
+				background-position: center center;
+				width: 17px;
+				height: 24px;
 			}
 		}
 

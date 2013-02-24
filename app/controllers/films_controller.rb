@@ -1,10 +1,12 @@
 class FilmsController < ApplicationController
   include ActionView::Helpers::TextHelper
-
+  before_filter :authenticate_user!
+  
   # GET /films
   # GET /films.json
   def index
-    @films = Film.find(:all, :order => 'id ASC')
+    # @films = Film.find(:all, :order => 'id ASC', :user => current_user )
+    @films = current_user.films( :order => 'id ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -67,7 +69,8 @@ class FilmsController < ApplicationController
   # POST /films
   # POST /films.json
   def create
-    @film = Film.new(params[:film])
+    @film = current_user.films.new(params[:film])
+    @film.save
 
     respond_to do |format|
       if @film.save
