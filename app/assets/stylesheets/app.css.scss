@@ -521,15 +521,15 @@ and (max-device-width : 480px) {
 	}
 
 	form.edit_film {
-		width: 190px;
+		width: -webkit-calc(100% - 20px);
 	}
 
 	header.condensed ul {
-		width: 280px;
+		width: 100%;
 	}
 
 	div.newform {
-		width: 200px;
+		width: -webkit-calc(100% - 20px);
 		margin: 0 0 0 -100px;
 		z-index: 4;
 		top: 15%;
