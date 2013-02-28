@@ -1,12 +1,13 @@
 class FilmsController < ApplicationController
   include ActionView::Helpers::TextHelper
   before_filter :authenticate_user!
-  
+
   # GET /films
   # GET /films.json
   def index
     # @films = Film.find(:all, :order => 'id ASC', :user => current_user )
     @films = current_user.films( :order => 'id ASC')
+    @film_count = current_user.films.count
 
     respond_to do |format|
       format.html # index.html.erb

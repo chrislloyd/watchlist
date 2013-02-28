@@ -2,6 +2,7 @@
 		<ul>
 			<li class="films"><a href="/all" class="home"></a></li>
 			<li class="newbtn"><%= link_to "", "", :class => "new", :remote => true %></a>
+      <li class="count"><%= @film_count %></li>
 			<li class="logout"><%= link_to "", "", :remote => true, :class => "logout" %>
 				<ul class="confirm">
         			<li>Logout?</li>
