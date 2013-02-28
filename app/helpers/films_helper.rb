@@ -1,8 +1,8 @@
 module FilmsHelper
 
   def film_status(film)
-    if film.seen?
-      ''
+    if film.watched?
+      'watched'
     else
       'inactive'
     end

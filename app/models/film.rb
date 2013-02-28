@@ -3,7 +3,7 @@ class Film < ActiveRecord::Base
   attr_accessible :date, :position, :status, :title
   belongs_to :user
 
-  def seen?
+  def watched?
     status
   end
 

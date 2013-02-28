@@ -26,25 +26,21 @@
     </div>
   <% end %>
 
-<% if @film.status == true %>
-  <div class="status watched">
-<% else %>  
-  <div class="status">
-<% end %>
+  <div class="status <%= film_status(@film) %>">
     <%= link_to("", { :action => "watch_toggle", :method => :put}, :remote=> true , :class => "text" )  %>
   </div>
 
   <%= f.text_field :title, :placeholder => "Title", :autocomplete => :off, :maxlength => "75" %>
-  
+
   <div class="dateselect">
     <%= f.date_select :date, :prompt => {:month => 'Mon', :day => 'D', :year => 'Year'}, :order => [:day, :month, :year], :use_short_month => true %>
   </div>
-  
+
   <%= f.submit :value => "Save", :class => "submit" %>
 
   <div class="alert title">A title is required</div>
   <div class="alert date">Saving a date requires all fields</div>
-  
+
 
 <% end %>
 
