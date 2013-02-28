@@ -43,39 +43,18 @@ $(function(){
     }
   });
 
-  $('select').on('change', function() {
-    var text = $('input#film_title').val();
-
-    if (text.length > 0) {
-      $('input.submit').addClass('save');
-
-      var empty = false;
-      $('select').each(function() {
-        if ($(this).val() == '') {
-          empty = true;
-        }
-      });
-
-      if (empty) {
-        $('div.alert.date').addClass('show');
-      } else {
-        $('div.alert.date').removeClass('show');
-      }
-
-    } else {
-      var empty = false;
-      $('select').each(function() {
-        if ($(this).val() == '') {
-          empty = true;
-        }
-      });
-
-      if (empty) {
-        $('div.alert.date').addClass('show');
-      } else {
-        $('div.alert.date').removeClass('show');
-      }
+  validateFilmForm = function() {
+    if ($('input#film_title').val() === '') {
+      return false;
     }
+
+    return !$('select').is(function() {
+      return $(this).val() === '';
+    });
+  }
+
+  $('select').on('change', function() {
+    $('input.submit').toggleClass('save', validateFilmForm());
   });
 
   $('input.submit').click(function() {
